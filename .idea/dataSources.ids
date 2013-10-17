@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Data Source" product="MySQL" version="5.6.11" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} )" uuid="bf1d3550-6b5f-4ab6-891c-b255ea0edefe">
+    <extra-name-characters>#@</extra-name-characters>
+    <identifier-quote-string>`</identifier-quote-string>
+    <synchronize>true</synchronize>
+    <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+    <jdbc-url>jdbc:mysql://localhost:3306/slam-web-tools-core</jdbc-url>
+    <user-name>root</user-name>
+    <schema-pattern>slam-web-tools-core.*</schema-pattern>
+    <default-schemas>slam-web-tools-core.*</default-schemas>
+    <libraries>
+      <library>
+        <url>jar://$PROJECT_DIR$/mysql-connector-java-5.1.26-bin.jar!/</url>
+      </library>
+      <library>
+        <url>file://$PROJECT_DIR$/mysql-connector-license.txt</url>
+      </library>
+    </libraries>
+    <schema name="" catalog="slam-web-tools-core"/>
+    <table name="migrations" schema="" catalog="slam-web-tools-core" type="TABLE">
+      <column name="migration" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="batch" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+    </table>
+  </data-source>
+</component>
