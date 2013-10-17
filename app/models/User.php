@@ -49,4 +49,35 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+    public function roles()
+    {
+        return $this->belongsToMany('Role');
+    }
+
+    public function hasRole($role)
+    {
+        if ($this->roles()->where('role', '=', $role)->first())
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public function isAdmin()
+    {
+        if ($this->roles()->where('role', '=', 'Admin')->orWhere('role', '=', 'SiteAdmin')->first())
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public function isSiteAdmin()
+    {
+        if ($this->roles()->where('role', '=', 'SiteAdmin')->first())
+        {
+            return true;
+        }
+        return false;
+    }
 }
