@@ -50,29 +50,29 @@
     </div>
     <div>
         <?php
-            $user = User::find(1);
+        $user = User::find(1);
             //echo $user->roles;
             //$fart = $user->roles::where('role', '=', 'SiteAdmin')->first();
             //echo $fart;
             if ($user->hasRole('User')){
-                echo 'Gavster is a User';
+                echo $user->email . ' is a User';
             }
             else{
                 echo 'Gavster is not a User';
             }
             echo '<br><br>';
-            if ($user->isAdmin()){
-                echo 'Gavster is an Admin';
+            if ($user->isAnAdmin()){
+                echo $user->email . ' is an Admin wank';
             }
             else{
-                echo 'Gavster is not an Admin';
+                echo $user->email . ' is not an Admin';
             }
             echo '<br><br>';
             if ($user->isSiteAdmin()){
-                echo 'Gavster is a SiteAdmin';
+                echo $user->email . ' is a SiteAdmin';
             }
             else{
-                echo 'Gavster is not a SiteAdmin';
+                echo $user->email . ' is not a SiteAdmin';
             }
         ?>
     </div>

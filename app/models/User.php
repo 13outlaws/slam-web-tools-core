@@ -3,7 +3,7 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class User extends ValidEloquent implements UserInterface, RemindableInterface {
 
 	/**
 	 * The database table used by the model.
@@ -49,9 +49,27 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+    protected $fillable = array(
+        'email',
+        'password',
+    );
+
+    public $rules = array(
+        'email' => 'required|email',
+        'password' => 'required',
+    );
+
     public function roles()
     {
         return $this->belongsToMany('Role');
+    }
+
+    public function userDetail(){
+        return $this->hasOne('UserDetail');
+    }
+
+    public function userProfile(){
+        return $this->hasOne('UserProfile');
     }
 
     public function hasRole($role)
@@ -65,7 +83,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
     public function isAdmin()
     {
-        if ($this->roles()->where('role', '=', 'Admin')->orWhere('role', '=', 'SiteAdmin')->first())
+        //TODO: modify roles table to have an is_admin column, which can then provide a simpler check here
+        if ($this->roles()->where('is_admin', '=', true)->count() > 0)
         {
             return true;
         }
@@ -80,4 +99,5 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         }
         return false;
     }
+
 }

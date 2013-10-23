@@ -34,6 +34,44 @@
     <table name="roles" schema="" catalog="slam-web-tools-core" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="role" sqlType="VARCHAR" length="64" precision="0" nullable="false" jdbcType="12"/>
+      <column name="is_admin" sqlType="BIT" length="0" precision="0" nullable="false" jdbcType="-7"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="user_details" schema="" catalog="slam-web-tools-core" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="title" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
+      <column name="address_line_1" sqlType="VARCHAR" length="512" precision="0" nullable="false" jdbcType="12"/>
+      <column name="address_line_2" sqlType="VARCHAR" length="512" precision="0" nullable="false" jdbcType="12"/>
+      <column name="address_line_3" sqlType="VARCHAR" length="512" precision="0" nullable="false" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR" length="512" precision="0" nullable="false" jdbcType="12"/>
+      <column name="country_name" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
+      <column name="country_iso" sqlType="VARCHAR" length="3" precision="0" nullable="false" jdbcType="12"/>
+      <column name="postcode" sqlType="VARCHAR" length="16" precision="0" nullable="false" jdbcType="12"/>
+      <column name="telephone_home" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="telephone_work" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="telephone_mobile" sqlType="VARCHAR" length="32" precision="0" nullable="false" jdbcType="12"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="user_profiles" schema="" catalog="slam-web-tools-core" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="profile_picture" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="bio" sqlType="TEXT" length="65535" precision="0" nullable="false" jdbcType="-1"/>
+      <column name="signature" sqlType="VARCHAR" length="512" precision="0" nullable="false" jdbcType="12"/>
+      <column name="website_url" sqlType="VARCHAR" length="256" precision="0" nullable="false" jdbcType="12"/>
+      <column name="facebook_url" sqlType="VARCHAR" length="256" precision="0" nullable="false" jdbcType="12"/>
+      <column name="twitter_url" sqlType="VARCHAR" length="256" precision="0" nullable="false" jdbcType="12"/>
+      <column name="linkedin_url" sqlType="VARCHAR" length="256" precision="0" nullable="false" jdbcType="12"/>
+      <column name="instagram_url" sqlType="VARCHAR" length="256" precision="0" nullable="false" jdbcType="12"/>
+      <column name="google_plus_url" sqlType="VARCHAR" length="256" precision="0" nullable="false" jdbcType="12"/>
       <column name="created_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <column name="updated_at" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
       <primary-key name="PRIMARY" columns="id"/>

@@ -1,0 +1,12 @@
+body{
+    font-family: arial;
+}
+
+
+.errorMessage{
+    color: red;
+}
+
+.errorTextBox{
+    background-color: #FFEEEE;
+}
